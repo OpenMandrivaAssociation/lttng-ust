@@ -4,7 +4,7 @@
 
 Name:           lttng-ust
 Version:        2.8.1
-Release:        1
+Release:        2
 License:        LGPLv2 and GPLv2 and MIT
 Group:          Development/C
 Summary:        LTTng Userspace Tracer library
@@ -30,8 +30,8 @@ LTTng userspace tracing
 Summary:        LTTng Userspace Tracer library headers and development files
 Group:          Development/C
 Provides:       lttng-ust-devel = %{version}-%{release}
-Requires:       %{libname}%{?_isa} = %{version}-%{release}
-Requires:       userspace-rcu-devel
+Requires:       %{libname} = %{version}-%{release}
+Requires:       pkgconfig(liburcu)
 
 %description -n %{devname}
 This library provides support for developing programs using
