@@ -3,13 +3,14 @@
 %define devname %mklibname -d lttng-ust
 
 Name:           lttng-ust
-Version:        2.8.1
-Release:        2
+Version:        2.9.0
+Release:        1
 License:        LGPLv2 and GPLv2 and MIT
 Group:          Development/C
 Summary:        LTTng Userspace Tracer library
 URL:            http://lttng.org
 Source0:        http://lttng.org/files/lttng-ust/%{name}-%{version}.tar.bz2
+Patch0:		lttng-ust-2.9.0-linkage.patch
 
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:  pkgconfig(liburcu)
@@ -39,6 +40,7 @@ LTTng userspace tracing
 
 %prep
 %setup -q
+%apply_patches
 sed -i -e '/SUBDIRS/s:examples::' doc/Makefile.am
 
 %build
@@ -46,11 +48,6 @@ sed -i -e '/SUBDIRS/s:examples::' doc/Makefile.am
 libtoolize -cvfi
 autoreconf -vif
 %configure --docdir=%{_docdir}/%{name} --disable-static
-# --with-java-jdk
-# Java support was disabled in lttng-ust's stable-2.0 branch upstream in
-# http://git.lttng.org/?p=lttng-ust.git;a=commit;h=655a0d112540df3001f9823cd3b331b8254eb2aa
-# We can revisit enabling this when the next major version is released.
-
 %make V=1
 
 %install
