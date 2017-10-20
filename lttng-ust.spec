@@ -10,7 +10,7 @@ Group:          Development/C
 Summary:        LTTng Userspace Tracer library
 URL:            http://lttng.org
 Source0:        http://lttng.org/files/lttng-ust/%{name}-%{version}.tar.bz2
-Patch0:		lttng-ust-2.9.0-linkage.patch
+#Patch0:		lttng-ust-2.9.0-linkage.patch
 
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:  pkgconfig(liburcu)
