@@ -19,7 +19,7 @@ BuildRequires:	pkgconfig(liburcu)
 This library may be used by user space applications to generate
 tracepoints using LTTng.
 
-%libpackage liblttng-ust-ctl %{ctl_major}
+%libpackage lttng-ust-ctl %{ctl_major}
 
 %package -n %{libname}
 Summary:	LTTng Userspace Tracer library
@@ -34,7 +34,7 @@ Summary:	LTTng Userspace Tracer library headers and development files
 Group:		Development/C
 Provides:	lttng-ust-devel = %{EVRD}
 Requires:	%{libname} = %{EVRD}
-Requires:	%mklibname liblttng-ust-ctl %{ctl_major}
+Requires:	%mklibname lttng-ust-ctl %{ctl_major}
 Requires:	pkgconfig(liburcu)
 
 %description -n %{devname}
