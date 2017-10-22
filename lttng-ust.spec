@@ -2,37 +2,36 @@
 %define libname %mklibname lttng-ust %major
 %define devname %mklibname -d lttng-ust
 
-Name:           lttng-ust
-Version:        2.9.1
-Release:        1
-License:        LGPLv2 and GPLv2 and MIT
-Group:          Development/C
-Summary:        LTTng Userspace Tracer library
-URL:            http://lttng.org
-Source0:        http://lttng.org/files/lttng-ust/%{name}-%{version}.tar.bz2
-#Patch0:		lttng-ust-2.9.0-linkage.patch
-
+Name:		lttng-ust
+Version:	2.9.1
+Release:	1
+License:	LGPLv2 and GPLv2 and MIT
+Group:		Development/C
+Summary:	LTTng Userspace Tracer library
+URL:		http://lttng.org
+Source0:	http://lttng.org/files/lttng-ust/%{name}-%{version}.tar.bz2
+Patch0:		lttng-ust-2.9.0-linkage.patch
 BuildRequires:	pkgconfig(uuid)
-BuildRequires:  pkgconfig(liburcu)
+BuildRequires:	pkgconfig(liburcu)
 
 %description
 This library may be used by user space applications to generate
 tracepoints using LTTng.
 
 %package -n %{libname}
-Summary:        LTTng Userspace Tracer library
-Group:          Development/C
+Summary:	LTTng Userspace Tracer library
+Group:		Development/C
 
 %description -n %{libname}
 This library provides support for developing programs using
 LTTng userspace tracing
 
 %package -n %{devname}
-Summary:        LTTng Userspace Tracer library headers and development files
-Group:          Development/C
-Provides:       lttng-ust-devel = %{version}-%{release}
-Requires:       %{libname} = %{version}-%{release}
-Requires:       pkgconfig(liburcu)
+Summary:	LTTng Userspace Tracer library headers and development files
+Group:		Development/C
+Provides:	lttng-ust-devel = %{EVRD}
+Requires:	%{libname} = %{EVRD}
+Requires:	pkgconfig(liburcu)
 
 %description -n %{devname}
 This library provides support for developing programs using
