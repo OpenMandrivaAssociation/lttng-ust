@@ -1,5 +1,5 @@
 %define major 0
-%define ctl_major 2
+%define ctl_major 4
 %define libname %mklibname lttng-ust %major
 %define devname %mklibname -d lttng-ust
 
