@@ -4,7 +4,7 @@
 %define devname %mklibname -d lttng-ust
 
 Name:		lttng-ust
-Version:	2.10.1
+Version:	2.10.2
 Release:	1
 License:	LGPLv2 and GPLv2 and MIT
 Group:		Development/C
@@ -42,8 +42,7 @@ This library provides support for developing programs using
 LTTng userspace tracing
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 sed -i -e '/SUBDIRS/s:examples::' doc/Makefile.am
 
 %build
@@ -51,10 +50,10 @@ sed -i -e '/SUBDIRS/s:examples::' doc/Makefile.am
 libtoolize -cvfi
 autoreconf -vif
 %configure --docdir=%{_docdir}/%{name} --disable-static
-%make V=1
+%make_build V=1
 
 %install
-make DESTDIR=%{buildroot} install
+%make_install
 rm -vf %{buildroot}%{_libdir}/*.la
 rm -rf %{buildroot}%{_docdir}/%{name}
 
