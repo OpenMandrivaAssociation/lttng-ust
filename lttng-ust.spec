@@ -4,7 +4,7 @@
 %define devname %mklibname -d lttng-ust
 
 Name:		lttng-ust
-Version:	2.10.4
+Version:	2.10.5
 Release:	1
 License:	LGPLv2 and GPLv2 and MIT
 Group:		Development/C
