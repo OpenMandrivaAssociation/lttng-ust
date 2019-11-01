@@ -14,6 +14,7 @@ Source0:	http://lttng.org/files/lttng-ust/%{name}-%{version}.tar.bz2
 Patch0:         lttng-gen-tp-shebang.patch
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	pkgconfig(liburcu)
+BuildRequires:	pkgconfig(numa)
 
 %description
 This library may be used by user space applications to generate
