@@ -11,7 +11,7 @@ Group:		Development/C
 Summary:	LTTng Userspace Tracer library
 URL:		http://lttng.org
 Source0:	http://lttng.org/files/lttng-ust/%{name}-%{version}.tar.bz2
-Patch0:         lttng-gen-tp-shebang.patch
+#Patch0:         lttng-gen-tp-shebang.patch
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	pkgconfig(liburcu)
 BuildRequires:	pkgconfig(numa)
