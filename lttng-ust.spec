@@ -1,6 +1,6 @@
 %define _disable_ld_no_undefined 1
 
-%define major 0
+%define major 1
 %define ctl_major 5
 %define libname %mklibname lttng-ust %major
 %define devname %mklibname -d lttng-ust
@@ -49,8 +49,6 @@ LTTng userspace tracing
 sed -i -e '/SUBDIRS/s:examples::' doc/Makefile.am
 
 %build
-export CC=gcc
-export CXX=g++
 #Reinitialize libtool with the fedora version to remove Rpath
 libtoolize -cvfi
 autoreconf -vif
