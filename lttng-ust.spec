@@ -49,6 +49,8 @@ LTTng userspace tracing
 sed -i -e '/SUBDIRS/s:examples::' doc/Makefile.am
 
 %build
+export CC=gcc
+export CXX=g++
 #Reinitialize libtool with the fedora version to remove Rpath
 libtoolize -cvfi
 autoreconf -vif
