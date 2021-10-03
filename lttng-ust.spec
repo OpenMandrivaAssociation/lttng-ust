@@ -1,7 +1,7 @@
 %define _disable_ld_no_undefined 1
 
 %define major 0
-%define ctl_major 4
+%define ctl_major 5
 %define libname %mklibname lttng-ust %major
 %define devname %mklibname -d lttng-ust
 
