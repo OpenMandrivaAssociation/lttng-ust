@@ -1,10 +1,12 @@
-%define major 0
-%define ctl_major 4
+%define _disable_ld_no_undefined 1
+
+%define major 1
+%define ctl_major 5
 %define libname %mklibname lttng-ust %major
 %define devname %mklibname -d lttng-ust
 
 Name:		lttng-ust
-Version:	2.11.1
+Version:	2.13.0
 Release:	1
 License:	LGPLv2 and GPLv2 and MIT
 Group:		Development/C
