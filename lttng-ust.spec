@@ -7,7 +7,7 @@
 
 Name:		lttng-ust
 Version:	2.13.5
-Release:	1
+Release:	2
 License:	LGPLv2 and GPLv2 and MIT
 Group:		Development/C
 Summary:	LTTng Userspace Tracer library
