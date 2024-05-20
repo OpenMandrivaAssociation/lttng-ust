@@ -7,7 +7,7 @@
 
 Name:		lttng-ust
 Version:	2.13.7
-Release:	1
+Release:	2
 License:	LGPLv2 and GPLv2 and MIT
 Group:		Development/C
 Summary:	LTTng Userspace Tracer library
@@ -49,6 +49,8 @@ LTTng userspace tracing
 sed -i -e '/SUBDIRS/s:examples::' doc/Makefile.am
 
 %build
+export CC=gcc
+export CXX=g++
 #Reinitialize libtool with the fedora version to remove Rpath
 libtoolize -cvfi
 autoreconf -vif
