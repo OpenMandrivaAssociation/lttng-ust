@@ -7,7 +7,7 @@
 
 Name:		lttng-ust
 Version:	2.13.7
-Release:	1
+Release:	2
 License:	LGPLv2 and GPLv2 and MIT
 Group:		Development/C
 Summary:	LTTng Userspace Tracer library
@@ -37,7 +37,7 @@ Summary:	LTTng Userspace Tracer library headers and development files
 Group:		Development/C
 Provides:	lttng-ust-devel = %{EVRD}
 Requires:	%{libname} = %{EVRD}
-Requires:	%mklibname lttng-ust-ctl %{ctl_major}
+Requires:	%mklibname lttng-ust-ctl
 Requires:	pkgconfig(liburcu)
 
 %description -n %{devname}
@@ -49,6 +49,13 @@ LTTng userspace tracing
 sed -i -e '/SUBDIRS/s:examples::' doc/Makefile.am
 
 %build
+###FIXME### Clang17/18 failed on aarc64 
+# rculfhash.c:907:2: error: address argument to atomic operation must be a pointer to integer ('typeof (&node->next)' (aka 'struct lttng_ust_lfht_node **') invalid)
+# uatomic_or(&node->next, REMOVED_FLAG);
+%ifarch %{aarch64}
+export CC=gcc
+export CXX=g++
+%endif
 #Reinitialize libtool with the fedora version to remove Rpath
 libtoolize -cvfi
 autoreconf -vif
