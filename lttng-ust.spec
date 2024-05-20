@@ -22,7 +22,7 @@ BuildRequires:	pkgconfig(numa)
 This library may be used by user space applications to generate
 tracepoints using LTTng.
 
-%libpackage lttng-ust-ctl
+%libpackage lttng-ust-ctl %{ctl_major}
 
 %package -n %{libname}
 Summary:	LTTng Userspace Tracer library
