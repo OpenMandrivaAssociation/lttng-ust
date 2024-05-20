@@ -49,8 +49,13 @@ LTTng userspace tracing
 sed -i -e '/SUBDIRS/s:examples::' doc/Makefile.am
 
 %build
+###FIXME### Clang17/18 failed on aarc64 
+# rculfhash.c:907:2: error: address argument to atomic operation must be a pointer to integer ('typeof (&node->next)' (aka 'struct lttng_ust_lfht_node **') invalid)
+# uatomic_or(&node->next, REMOVED_FLAG);
+%ifarch %{aarch64}
 export CC=gcc
 export CXX=g++
+%endif
 #Reinitialize libtool with the fedora version to remove Rpath
 libtoolize -cvfi
 autoreconf -vif
