@@ -11,7 +11,7 @@ Release:	2
 License:	LGPLv2 and GPLv2 and MIT
 Group:		Development/C
 Summary:	LTTng Userspace Tracer library
-URL:		http://lttng.org
+URL:		https://lttng.org
 Source0:	http://lttng.org/files/lttng-ust/%{name}-%{version}.tar.bz2
 Patch0:         lttng-gen-tp-shebang.patch
 BuildRequires:	pkgconfig(uuid)
