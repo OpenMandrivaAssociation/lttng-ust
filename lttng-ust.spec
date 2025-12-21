@@ -14,6 +14,11 @@ Summary:	LTTng Userspace Tracer library
 URL:		https://lttng.org
 Source0:	http://lttng.org/files/lttng-ust/%{name}-%{version}.tar.bz2
 Patch0:         lttng-gen-tp-shebang.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	pkgconfig(liburcu)
 BuildRequires:	pkgconfig(numa)
